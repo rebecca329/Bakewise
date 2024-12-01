@@ -76,7 +76,8 @@
             cursor: pointer;
             display: block;
             margin: 0 auto;
-            transition: background-color 0.3s ease-in-out, box-shadow 0.3s;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
         }
 
         button:hover {
