@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <meta name="viewport" content="widthdevice-width", initial-scale="1.0">
+=======
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+>>>>>>> 5fad978465bea0935b66883498a3b75cbaec72aa
     <title>Register and Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
     <style>
@@ -76,7 +80,8 @@
             cursor: pointer;
             display: block;
             margin: 0 auto;
-            transition: background-color 0.3s ease-in-out, box-shadow 0.3s;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
         }
 
         button:hover {
