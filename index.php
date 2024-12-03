@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container" id="signup">
+    <div class="container" id="signup" style="display:none;">
         <h1 class="form-title">Register</h1>
         <form method="post" action="">
             <div class="input-group">
@@ -61,5 +61,7 @@
            <button id="LoginButton">Login</button>
         </div>
     </div>
+    <script src="script.js"></script>
+
 </body>
 </html>
