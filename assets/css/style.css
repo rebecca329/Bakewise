@@ -476,3 +476,16 @@ font-size: 1.5rem;
         color: pink;
       }
 
+      <!--Add the .error class for styling error messages and .success for the success message. Example CSS -->
+
+      <!--.error {
+        color: red;
+        font-size: 14px;
+    }
+    .success {
+        color: green;
+        font-size: 16px;
+        margin-top: 10px;
+    } -->
+    
+
