@@ -1,5 +1,5 @@
 :root{
-    --pink:#e84393;
+    --pink:pink;
 }
 
 
@@ -32,11 +32,6 @@ section{
     padding: 1rem;
     margin: 2rem 0;
     background: rgba(255,51,153,.05);
-}
-
-.heading sapn{
-    color: pink;
-
 }
 
 .btn{
@@ -72,7 +67,7 @@ header .logo{
     font-weight: bolder;
 }
 header .logo span{
-    color: var(--pink);
+    color: pink;
 }
 header .navbar a {
     font-size: 2rem;
@@ -81,7 +76,7 @@ header .navbar a {
 }
 
 header .navbar a:hover{
-    color: #e84393;
+    color:pink;
 }
 
 header .icons a{
@@ -91,7 +86,7 @@ header .icons a{
 }
 
 header .icons a:hover{
-    color: #e84393;
+    color: pink;
 }
 
 header #toggler{
@@ -112,7 +107,7 @@ header .fa-bars{
     display: flex;
     align-items: center;
     min-height: 100vh;
-    background: url(../images/home-bg.jpg) no-repeat;
+    background: url(../images/home.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -154,11 +149,12 @@ max-width: 50rem;
 
     section{
         padding: 2rem;
-    }{
-        background-position: left: ;;
+    }
+    
+    .home{
+        background-position: left;
     }
 
-    .home
 }
 
 @media (max-width:768px){
