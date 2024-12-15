@@ -1,7 +1,7 @@
 <?php
 include 'connect.php';
 
-if (isset($_POST['SignUp'])) { // Matches the form's button name
+if (isset($_POST['SignUp'])) { 
     $firstName = $_POST['fName'];
     $lastName = $_POST['lName'];
     $email = $_POST['email'];
@@ -29,7 +29,7 @@ if (isset($_POST['SignUp'])) { // Matches the form's button name
     }
 }
 
-if (isset($_POST['SignIn'])) { // Matches the form's button name
+if (isset($_POST['SignIn'])) { 
     $email = $_POST['email'];
     $password = md5($_POST['password']); 
 
@@ -43,7 +43,7 @@ if (isset($_POST['SignIn'])) { // Matches the form's button name
         session_start();
         $row = $result->fetch_assoc();
         $_SESSION['email'] = $row['email'];
-        header("Location: homepage.php");
+        header("Location: index.php");
         exit();
     } else {
         echo "Not Found, Incorrect Email or Password";
