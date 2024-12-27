@@ -45,7 +45,7 @@
 </div>
 <div class="container" id="signIn">
     <h1 class="form-title">Sign In</h1>
-    <form method="post" action="register.php">
+    <form method="post" action="index.html">
         <div class="input-group">
             <i class="fas fa-envelope"></i>
             <input type="email" name="email" id="email-singnup" placeholder="Email" required>
@@ -68,7 +68,7 @@
     </div>
     <div class="links">
         <p>Don't have an account yet?</p>
-        <button id="SignUp">Sign Up</button> 
+        <button id="SignUp"><a href="register.php">Sign Up</a></button> 
     </div>
 </div>
 <script src="script.js"></script>
