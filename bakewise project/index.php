@@ -23,7 +23,7 @@
         </div>
         <div class="input-group">
             <i class="fas fa-envelope"></i>
-            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required>
             <label for="email">Email</label>
         </div>
         <div class="input-group">
