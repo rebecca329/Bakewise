@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">BakeWise<span>.</span></a>
+        <a href="products.html" class="btn">Back to Products</a>
+    </header>
+
+    <section class="cart-section">
+        <h1>Your Cart</h1>
+        <div id="cart-container"></div>
+        <h3 id="total-price"></h3>
+        <button id="checkout-btn" class="btn" style="display: none;">Checkout</button>
+    </section>
+
+    <script>
+        // Fetch the cart from localStorage or initialize an empty array
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const cartContainer = document.getElementById("cart-container");
+        const totalPriceElement = document.getElementById("total-price");
+        const checkoutBtn = document.getElementById("checkout-btn");
+
+        // Render the cart items
+        const renderCart = () => {
+            cartContainer.innerHTML = "";
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = "<p>Your cart is empty. Add some products!</p>";
+                totalPriceElement.innerText = "";
+                checkoutBtn.style.display = "none";
+                return;
+            }
+
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                const cartItemHTML = `
+                    <div class="cart-item">
+                        <h3>${item.name}</h3>
+                        <p>Price: Rs. ${item.price}</p>
+                        <p>
+                            Quantity: 
+                            <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                            ${item.quantity}
+                            <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                        </p>
+                        <p>Total: Rs. ${itemTotal}</p>
+                        <button class="btn remove-btn" onclick="removeItem(${index})">Remove</button>
+                    </div>
+                `;
+                cartContainer.innerHTML += cartItemHTML;
+            });
+
+            totalPriceElement.innerText = `Total: Rs. ${total}`;
+            checkoutBtn.style.display = "block";
+        };
+
+        // Update the quantity of a cart item
+        const updateQuantity = (index, delta) => {
+            const item = cart[index];
+            item.quantity += delta;
+
+            if (item.quantity <= 0) {
+                removeItem(index);
+            } else {
+                saveCart();
+                renderCart();
+            }
+        };
+
+        // Remove an item from the cart
+        const removeItem = (index) => {
+            cart.splice(index, 1);
+            saveCart();
+            renderCart();
+        };
+
+        // Save the cart to localStorage
+        const saveCart = () => {
+            localStorage.setItem("cart", JSON.stringify(cart));
+        };
+
+        // Initial render
+        renderCart();
+    </script>
+</body>
+</html>
