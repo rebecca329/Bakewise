@@ -293,7 +293,7 @@
 
 
 
-            <div class ="image">
+           <!--<div class ="image">
                 <div class="row">
                 <img src="images/about.jpg" alt=""> 
             </div>
@@ -302,7 +302,7 @@
             <h3>Fresh products are used for baking.</h3>
             <h3>Healthy and delicious.</h3>
         </div>
-    </div>
+    </div> -->
 
 
 
@@ -362,5 +362,39 @@
 <!--footer  section ends-->
 </footer>
 
- </body>
+ 
+
+
+
+
+<script>
+    document.querySelectorAll('.fas.fa-heart').forEach(heart => {
+        heart.addEventListener('click', function (event) {
+            event.preventDefault();
+            const productId = this.getAttribute('data-id');
+            const action = this.classList.contains('active') ? 'remove' : 'add';
+    
+            fetch('wishlist.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `productId=${productId}&action=${action}`,
+            })
+                .then(response => response.text())
+                .then(status => {
+                    if (status === 'added') {
+                        this.classList.add('active');
+                        alert('Added to wishlist!');
+                    } else if (status === 'removed') {
+                        this.classList.remove('active');
+                        alert('Removed from wishlist!');
+                    } else {
+                        alert('Error processing request.');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    });
+    </script>
+    
+</body>
  </html>
