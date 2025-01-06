@@ -8,5 +8,4 @@ if($conn->connect_error){
     die("Failed to connect DB:". $conn->connect_error);
     
 }
-
 ?>
