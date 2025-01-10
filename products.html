@@ -5,30 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Products - BakeWise</title>
     <link rel="stylesheet" href="styless.css"/>
-
-  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-
     <header>
-        <input type="checkbox" id="toggler">
+        <input type="checkbox" name="" id="toggler">
         <label for="toggler" class="fas fa-bars"></label>
 
+        <a href="#" class="logo">BakeWise<span>.</span></a>
 
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="products.html">Products</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        
+        <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <div class="cart-icon">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <div class="cart-dropdown">
+                    <ul id="cart-items">
+                        <li class="empty-cart">Your cart is empty</li>
+                    </ul>
+                    <div class="cart-total">
+                        Total: Rs. <span id="cart-total">0</span>
+                    </div>
+                </div>
+            </div>
+            <a href="index.php" class="fas fa-user"></a>
+        </div>
     </header>
 
     <section class="products" id="products">
-        <h1 class="heading">Our <span>Products</span></h1>
         <div class="box-container">
- 
+           
             <div class="box">
                 <div class="image">
-                    <img src="images/brownie.jpg" alt="Brownie">
+                    <a href="productsdeet.php?id=1">
+                        <img src="images/brownie.jpg" alt="Brownie">
+                    </a>
                     <div class="icons">
                         <a href="#" class="fas fa-heart"></a>
                         <a href="#" class="cart-btn" data-id="1" data-name="Brownie" data-price="150">Add to Cart</a>
-                        <a href="#" class="fas fa-share"></a>
+                        <a href="productsdeet.php" class="fas fa-info-circle"></a>
                     </div>
                 </div>
                 <div class="content">
@@ -36,24 +58,27 @@
                     <div class="price">Rs.150</div>
                 </div>
             </div>
+
+        </div>
+        <div class="box">
+            <div class="image">
+                <a href="productsdeet.php?id=2"></a>
+                <img src="images/lemon.jpg" alt="Lemon Cookie">
             
-            <div class="box">
-                <div class="image">
-                    <img src="images/lemon.jpg" alt="Lemon Cookie">
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="cart-btn" data-id="2" data-name="Lemon Cookie" data-price="100">Add to Cart</a>
-                        <a href="#" class="fas fa-share"></a>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3>Lemon Cookie</h3>
-                    <div class="price">Rs.100</div>
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="addtocart.php" class="cart-btn" data-id="2" data-name="Lemon Cookie" data-price="100">Add to Cart</a>
+                    <a href="#" class="fas fa-share"></a>
                 </div>
             </div>
-           
+            <div class="content">
+                <h3>Lemon Cookie</h3>
+                <div class="price">Rs.100</div>
+            </div>
+        </div>
             <div class="box">
                 <div class="image">
+                    <a href="productsdeet.php?id=3"></a>
                     <img src="images/banana.jpg" alt="Banana Bread">
                     <div class="icons">
                         <a href="#" class="fas fa-heart"></a>
@@ -66,9 +91,9 @@
                     <div class="price">Rs.120</div>
                 </div>
             </div>
-            
             <div class="box">
                 <div class="image">
+                    <a href="productsdeet.php?id=4"></a>
                     <img src="images/pbread.jpg" alt="Plain Bread">
                     <div class="icons">
                         <a href="#" class="fas fa-heart"></a>
@@ -81,9 +106,9 @@
                     <div class="price">Rs.90</div>
                 </div>
             </div>
-           
-            <div class="box">
-                <div class="image">
+
+     <div class="image">
+                    <a href="productsdeet.php?id=5"></a>
                     <img src="images/cookie.jpg" alt="Chocolate Chip Cookie">
                     <div class="icons">
                         <a href="#" class="fas fa-heart"></a>
@@ -96,9 +121,86 @@
                     <div class="price">Rs.90</div>
                 </div>
             </div>
-           
-        </div>
+            <div class="box">
+                <div class="image">
+                    <a href="productsdeet.php?id=6"></a>
+                    <img src="images/cinimon.jpg" alt="cinnemon roll">
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="addtocart.php" class="cart-btn" data-id="2" data-name="Lemon Cookie" data-price="100">Add to Cart</a>
+                        <a href="#" class="fas fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>cinnemon roll</h3>
+                    <div class="price">Rs.114 <span>Rs.120 </span></div>
+                </div>
+            </div>
+       
+
+
     </section>
-    
 </body>
+
+<script>
+    const cartDropdown = document.querySelector('.cart-dropdown');
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+
+    // Initialize cart from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function updateCartUI() {
+        cartItems.innerHTML = '';
+        let total = 0;
+
+        if (cart.length === 0) {
+            cartItems.innerHTML = '<li class="empty-cart">Your cart is empty</li>';
+        } else {
+            cart.forEach((item) => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - Rs. ${item.price} x ${item.quantity}`;
+                cartItems.appendChild(li);
+                total += item.price * item.quantity;
+            });
+        }
+        cartTotal.textContent = total;
+    }
+
+    function addToCart(id, name, price) {
+        const existingItem = cart.find((item) => item.id === id);
+
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            cart.push({ id, name, price, quantity: 1 });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartUI();
+    }
+
+    document.querySelectorAll('.cart-btn').forEach((button) => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const id = e.target.getAttribute('data-id');
+            const name = e.target.getAttribute('data-name');
+            const price = parseInt(e.target.getAttribute('data-price'), 10);
+
+            addToCart(id, name, price);
+        });
+    });
+
+    // Initial UI update
+    updateCartUI();
+
+    // Show/Hide cart dropdown on hover
+    document.querySelector('.cart-icon').addEventListener('mouseover', () => {
+        cartDropdown.style.display = 'block';
+    });
+
+    document.querySelector('.cart-icon').addEventListener('mouseleave', () => {
+        cartDropdown.style.display = 'none';
+    });
+</script>
 </html>

@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$dbname = "cart";
+$dbname = "bakewise";
 
 $conn = new mysqli($host, $user, $password, $dbname);
 

@@ -20,14 +20,12 @@
     </section>
 
     <script>
-        // Fetch the cart from localStorage or initialize an empty array
+        // Fetch the cart from localStorage
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
         const cartContainer = document.getElementById("cart-container");
         const totalPriceElement = document.getElementById("total-price");
         const checkoutBtn = document.getElementById("checkout-btn");
 
-        // Render the cart items
         const renderCart = () => {
             cartContainer.innerHTML = "";
 
@@ -39,7 +37,6 @@
             }
 
             let total = 0;
-
             cart.forEach((item, index) => {
                 const itemTotal = item.price * item.quantity;
                 total += itemTotal;
@@ -50,12 +47,12 @@
                         <p>Price: Rs. ${item.price}</p>
                         <p>
                             Quantity: 
-                            <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                            <button onclick="updateQuantity(${index}, -1)">-</button>
                             ${item.quantity}
-                            <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                            <button onclick="updateQuantity(${index}, 1)">+</button>
                         </p>
                         <p>Total: Rs. ${itemTotal}</p>
-                        <button class="btn remove-btn" onclick="removeItem(${index})">Remove</button>
+                        <button onclick="removeItem(${index})">Remove</button>
                     </div>
                 `;
                 cartContainer.innerHTML += cartItemHTML;
@@ -65,7 +62,6 @@
             checkoutBtn.style.display = "block";
         };
 
-        // Update the quantity of a cart item
         const updateQuantity = (index, delta) => {
             const item = cart[index];
             item.quantity += delta;
@@ -78,20 +74,20 @@
             }
         };
 
-        // Remove an item from the cart
-        const removeItem = (index) => {
+        const removeItem = index => {
             cart.splice(index, 1);
             saveCart();
             renderCart();
         };
 
-        // Save the cart to localStorage
         const saveCart = () => {
             localStorage.setItem("cart", JSON.stringify(cart));
         };
 
-        // Initial render
+     
         renderCart();
     </script>
+    <script src="cart.js"></script>
 </body>
+
 </html>
