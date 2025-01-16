@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Test</title>
+    <style>
+        .fas.fa-heart.active {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test wishlist</h1>
+
+    <div>
+        <a href="#" class="fas fa-heart" data-id="1"></a> Brownie
+    </div>
+    <div>
+        <a href="#" class="fas fa-heart" data-id="2"></a> Lemon Cookie
+    </div>
+    <div>
+        <a href="#" class="fas fa-heart" data-id="2"></a> banana bread
+    </div>
+    <div>
+        <a href="#" class="fas fa-heart" data-id="2"></a> plain bread
+    </div>
+    <div>
+        <a href="#" class="fas fa-heart" data-id="2"></a> chocolate chip cookie
+    </div>
+    <div>
+        <a href="#" class="fas fa-heart" data-id="2"></a> cinnemon roll
+    </div>
+    <div>
+        <a href="#" class="fas fa-heart" data-id="2"></a> vanilla muffine
+    </div>
+    <div>
+        <a href="#" class="fas fa-heart" data-id="2"></a> blueberry muffine
+    </div>
+    <div>
+        <a href="#" class="fas fa-heart" data-id="2"></a> bagel
+    </div>
+
+    <script>
+        document.querySelectorAll('.fas.fa-heart').forEach(heart => {
+            heart.addEventListener('click', function (event) {
+                event.preventDefault();
+                const productId = this.getAttribute('data-id');
+                const action = this.classList.contains('active') ? 'remove' : 'add';
+
+                fetch('wishlist.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `productId=${productId}&action=${action}`,
+                })
+                    .then(response => response.text())
+                    .then(status => {
+                        if (status === 'added') {
+                            this.classList.add('active');
+                            alert('Added to wishlist!');
+                        } else if (status === 'removed') {
+                            this.classList.remove('active');
+                            alert('Removed from wishlist!');
+                        } else {
+                            alert('Error processing request.');
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            });
+        });
+    </script>
+</body>
+</html>

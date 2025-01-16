@@ -4,20 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BakeWise</title>
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="styless.css"/>
 
     <!--font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-
-    <!--custome css file link-->
-    <!--  <link rel="stylesheet" href="css/style.css"  -->
-
-
 </head>
 <body>
 
-    <!--header section start-->
     <header>
 
         <input type="checkbox" name="" id="toggler">
@@ -26,16 +20,17 @@
         <a href="#" class="logo">BakeWise<span>.</span></a>
 
         <nav class="navbar">
-            <a href="#home">home</a>
-            <a href="#about">about</a>
-            <a href="#products">products</a>
-            <a href="#contact">contact</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="products.html">Products</a>
+            <a href="#contact">Contact</a>
+
         </nav>
 
         <div class="icons">
             <a href="#" class="fas fa-heart"></a>
             <a href="#" class="fas fa-shopping-cart"></a>
-            <a href="#" class="fas fa-user"></a>
+            <a href="index.php" class="fas fa-user"></a>
         </div>
 
     </header>
@@ -51,9 +46,9 @@
             Every bite is made with love and the finest ingredients to brighten your day!</p>
         <a href="#" class="btn">shop now</a>
 </section>
-<!--home section ends-->
 
-<!--about section starts-->
+
+
 <section class="about" id="about">
     <h1 class="heading"><sapn> about </sapn> us </h1>
     <div class="row">
@@ -66,7 +61,7 @@
             <p>Welcome to Bakewise, 
                 your one-stop destination for deliciously crafted pastries, breads, and cakes.
                  We bake with love, using the finest ingredients to bring a smile to every bite.</p>
-            <p>At Bakewise, baking isn’t just a craft—it’s a passion. 
+            <p> At Bakewise, baking isn’t just a craft—it’s a passion. 
                 Our journey began with a love for creating unforgettable flavors, and we’ve been serving joy with every bite ever since. 
                 From freshly baked bread to cakes for your special every occasions, we’re here to make your days sweeter.
                 Every day, we bake fresh, using only the finest ingredients to ensure every bite is a delight.</p>
@@ -74,9 +69,7 @@
         </div>
     </div>
 </section>
-<!--about section ends-->
 
-<!--icon section starts-->
 <section class="icons-container">
     <div class="icons">
         <img src="images/free.png" alt="">
@@ -98,30 +91,41 @@
         <img src="images/cash.png" alt="">
         <div class="info">
             <h3>cash on delivery</h3>
-            <span>on orders</span>
+            <span>on all orders</span>
+        </div>
+    </div>
+
+    
+    <div class="icons">
+        <img src="images/eco.png" alt="">
+        <div class="info">
+            <h3>eco friendly </h3>
+            <span> environment safe </span>
         </div>
     </div>
 </section>
-<!--icon section ends-->
 
-<!--product section ends-->
 <section class="products" id="products">
     <h1 class="heading">our<span> products</span></h1>
     <div class="box-container">
 
         <div class="box">
-           <!----<span class="discount">-5%</span> -->
+           <span class="discount">-8%</span> 
             <div class="image">
                 <img src="images/brownie.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="1" 
+                       data-name="Brownie" 
+                       data-price="150">add to cart</a>
                     <a href="#" class="fas fa-share"></a>
                 </div>
             </div>
             <div class="content">
                 <h3>brownie</h3>
-                <div class="price">Rs.150 <!--<span> rs200</span>--></div>
+                <div class="price">Rs.230 <span> Rs.250</span></div>
             </div>
         </div>
 
@@ -131,7 +135,11 @@
                 <img src="images/lemon.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="2" 
+                       data-name="lemon cookie" 
+                       data-price="100">add to cart</a>
                     <a href="#" class="fas fa-share"></a>
                 </div>
             </div>
@@ -142,18 +150,22 @@
         </div>
 
         <div class="box">
-            <!--<span class="discount">-10%</span>-->
+            <span class="discount">-10%</span>
             <div class="image">
                 <img src="images/banana.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="3" 
+                       data-name="banana bread" 
+                       data-price="120">add to cart</a>
                     <a href="#" class="fas fa-share"></a>
                 </div>
             </div>
             <div class="content">
                 <h3>banana bread</h3>
-                <div class="price">Rs.120 <!--<span> $10.99</span>--></div>
+                <div class="price">Rs.180 <span>Rs.200</span></div>
             </div>
         </div>
 
@@ -163,7 +175,11 @@
                 <img src="images/pbread.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="4" 
+                       data-name="plain bread" 
+                       data-price="90">add to cart</a>
                     <a href="#" class="fas fa-share"></a>
                 </div>
             </div>
@@ -174,34 +190,42 @@
         </div>
 
         <div class="box">
-            <!--<span class="discount">-10%</span>-->
+            <span class="discount">-5%</span>
             <div class="image">
                 <img src="images/cookie.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="5" 
+                       data-name="chocolate chip cookie" 
+                       data-price="90">add to cart</a>
                     <a href="#" class="fas fa-share"></a>
                 </div>
             </div>
             <div class="content">
                 <h3>chocolate chip cookie</h3>
-                <div class="price">Rs.90 <!--<span> $10.99</span> --></div>
+                <div class="price">Rs.114 <span> Rs.120 </span> </div>
             </div>
         </div>
 
         <div class="box">
-            <!--<span class="discount">-10%</span>-->
+            <span class="discount">-5%</span>
             <div class="image">
                 <img src="images/cinimon.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="6" 
+                       data-name="cinnemon roll" 
+                       data-price="110">add to cart</a>
                     <a href="#" class="fas fa-share"></a>
                 </div>
             </div>
             <div class="content">
                 <h3>cinnemon roll</h3>
-                <div class="price">Rs.110 <!--<span> $10.99</span> --></div>
+                <div class="price">Rs.114 <span>Rs.120 </span></div>
             </div>
         </div>
 
@@ -211,13 +235,17 @@
                 <img src="images/muffine.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="7" 
+                       data-name="vanilla muffine" 
+                       data-price="70">add to cart</a>
                     <a href="#" class="fas fa-share"></a>
                 </div>
             </div>
             <div class="content">
                 <h3>vanilla muffine</h3>
-                <div class="price">Rs.70 <!--<span> Rs.150</span> --></div>
+                <div class="price">Rs.100 <!--<span> Rs.150</span> --></div>
             </div>
         </div>
 
@@ -227,37 +255,66 @@
                 <img src="images/blue.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="8" 
+                       data-name="blueberry muffine" 
+                       data-price="80">add to cart</a>
                     <a href="#" class="fas fa-share"></a>
                 </div>
             </div>
             <div class="content">
                 <h3>blueberry muffine</h3>
-                <div class="price">Rs.80 <!--<span> $10.99</span> --></div>
+                <div class="price">Rs.110 <!--<span> $10.99</span> --></div>
             </div>
         </div>
 
         <div class="box">
            <!--<span class="discount">-10%</span>-->
             <div class="image">
-                <img src="images/bagals (2).jpg" alt="">
+                <img src="images/bagals.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="9" 
+                       data-name="bagals" 
+                       data-price="50">add to cart</a>
                     <a href="#" class="fas fa-share"></a>
                 </div>
             </div>
             <div class="content">
                 <h3>bagel</h3>
-                <div class="price">Rs.50 <!--<span> $10.99</span>--></div>
+                <div class="price">Rs.90 <!--<span> $10.99</span>--></div>
             </div>
         </div>
+
+
+<<<<<<< HEAD
+<!-- 
+            <div class ="image">
+=======
+
+           <!--<div class ="image">
+>>>>>>> 4ac2dda194da4426536c129d6be525909e93700a
+                <div class="row">
+                <img src="images/about.jpg" alt=""> 
+            </div> -->
+        </div>
+        <div class="content">
+            <br><h3>Fresh products are used for baking.</h3>
+            <h3>Healthy and delicious.</h3>
+        </div>
+    </div> -->
+
+
+
+    
     </div>
 </section>
-<!--product section ends-->
 
-<!--contact section starts-->
-<section class="contact" id="contant">
+
+<section class="contact" id="contact">
     <h1 class="heading"><span>contact</span> us</h1>
     <div class="row">
         <form action="">
@@ -270,48 +327,278 @@
 
         <div class="image">
             <img src="images/contact-img.svg" alt="">
-
         </div>
     </div>
 </section>
-<!--contact section ends-->
-    
-<!--footer  section starts-->
-<section class="footer">
+
+
+<footer class="footer">
     <div class="box-container">
         <div class="box">
-            <h3>quick links</h3>
-            <a href="#">home</a>
-            <a href="#">about</a>
-            <a href="#">products</a>
-            <a href="#">contact</a>
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Products</a>
+            <a href="#">Contact</a>
         </div>
-
         <div class="box">
-            <h3>extra links</h3>
-            <a href="#">my account</a>
-            <a href="#">my order</a>
-            <a href="#">my favorite</a>
+            <h3>Extra Links</h3>
+            <a href="#"> Account</a>
+            <a href="#">Orders</a>
+            <a href="#">Favorites</a>
         </div>
-
         <div class="box">
-            <h3>location</h3>
-            <a href="#">nepal</a>
+            <h3>Location</h3>
+            <a href="#">Nepal</a>
         </div>
-
         <div class="box">
-            <h3>contact info</h3>
+            <h3>Contact Info</h3>
             <a href="#">+977 9811111111</a>
-            <a href="#">example@gmail.com</a>
-            <a href="#">pokhara, nepal</a>
+            <a href="#">Bakewise@gmail.com</a>
+            <a href="#">Pokhara, Nepal</a>
         </div>
     </div>
-    <div class="creadit">created by<span>team shrek</span>| all rights reserved</div>
+
+    <div class="creadit">created by<span> team shrek</span>| all rights reserved.</div>
 </section>
+
 <!--footer  section ends-->
+</footer>
+<script>
+    // Inject CSS for Cart Modal and Overlay
+    const style = document.createElement("style");
+    style.innerHTML = `
+        /* Cart Modal Styles */
+        .cart-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 500px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            padding: 20px;
+            display: none;
+            flex-direction: column;
+        }
+
+        .cart-modal h2 {
+            margin: 0 0 15px;
+            font-size: 1.5rem;
+            color: #444;
+            text-align: center;
+        }
+
+        .cart-modal .cart-items {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        .cart-modal .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+        }
+
+        .cart-modal .cart-item h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .cart-modal .cart-item input {
+            width: 50px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .cart-modal .cart-item button {
+            background: #ff4d4d;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-modal .cart-item button:hover {
+            background: #e63939;
+        }
+
+        .cart-modal .total {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        .cart-modal .close-btn {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            align-self: center;
+        }
+
+        .cart-modal .close-btn:hover {
+            background: #444;
+        }
+
+        /* Overlay Styles */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // JavaScript for Cart Functionality
+    const cartIcon = document.querySelector(".fa-shopping-cart");
+    const cartOverlay = document.createElement("div");
+    cartOverlay.className = "cart-overlay";
+    document.body.appendChild(cartOverlay);
+
+    const cartModal = document.createElement("div");
+    cartModal.className = "cart-modal";
+    document.body.appendChild(cartModal);
+
+    let cart = [];
+
+    cartIcon.addEventListener("click", () => {
+        renderCart();
+        cartOverlay.style.display = "block";
+        cartModal.style.display = "flex";
+    });
+
+    cartOverlay.addEventListener("click", () => {
+        cartOverlay.style.display = "none";
+        cartModal.style.display = "none";
+    });
+
+    function renderCart() {
+        cartModal.innerHTML = `
+            <h2>Your Cart</h2>
+            <div class="cart-items">
+                ${cart
+                    .map(
+                        (item, index) => `
+                    <div class="cart-item">
+                        <h4>${item.name}</h4>
+                        <div>
+                            <input type="number" value="${item.quantity}" min="1" data-index="${index}">
+                            <button data-index="${index}">Remove</button>
+                        </div>
+                    </div>
+                `
+                    )
+                    .join("")}
+            </div>
+            <div class="total">Total: Rs.${calculateTotal()}</div>
+            <button class="close-btn">Close</button>
+        `;
+
+        cartModal.querySelectorAll("input[type='number']").forEach((input) => {
+            input.addEventListener("change", (e) => {
+                const index = e.target.dataset.index;
+                cart[index].quantity = parseInt(e.target.value);
+                renderCart();
+            });
+        });
+
+        cartModal.querySelectorAll("button[data-index]").forEach((button) => {
+            button.addEventListener("click", (e) => {
+                const index = e.target.dataset.index;
+                cart.splice(index, 1);
+                renderCart();
+            });
+        });
+
+        cartModal.querySelector(".close-btn").addEventListener("click", () => {
+            cartOverlay.style.display = "none";
+            cartModal.style.display = "none";
+        });
+    }
+
+    function calculateTotal() {
+        return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    }
+
+    document.querySelectorAll(".cart-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const item = {
+                id: btn.dataset.id,
+                name: btn.dataset.name,
+                price: parseInt(btn.dataset.price),
+                quantity: 1,
+            };
+
+            const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push(item);
+            }
+
+            alert(`${item.name} has been added to your cart!`);
+        });
+    });
+</script>
+
+
+
  
-   
 
+
+
+
+<script>
+    document.querySelectorAll('.fas.fa-heart').forEach(heart => {
+        heart.addEventListener('click', function (event) {
+            event.preventDefault();
+            const productId = this.getAttribute('data-id');
+            const action = this.classList.contains('active') ? 'remove' : 'add';
+    
+            fetch('wishlist.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `productId=${productId}&action=${action}`,
+            })
+                .then(response => response.text())
+                .then(status => {
+                    if (status === 'added') {
+                        this.classList.add('active');
+                        alert('Added to wishlist!');
+                    } else if (status === 'removed') {
+                        this.classList.remove('active');
+                        alert('Removed from wishlist!');
+                    } else {
+                        alert('Error processing request.');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    });
+    </script>
+    
 </body>
-
-</html>
+ </html>
