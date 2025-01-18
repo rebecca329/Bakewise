@@ -1,5 +1,5 @@
 <script>
-    document.addEventListener'DOMContentLoaded', () => {
+    document.addEventListener'DOMContentLoaded', () = {
         document.querySelectorAll('.fas.fa-heart').forEach(heart => {
             heart.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -27,5 +27,5 @@
                     .catch(error => console.error('Error:', error));
             });
         })
-    })
+    }
 </script>

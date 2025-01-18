@@ -1,18 +1,16 @@
 <?php
 $host = "localhost";
 $user = "root";
-$pass = ""; 
+$pass = "";
+$dbname = "bakewise"; // Fixed variable name
 
 // Create connection
-$conn = new mysqli($host, $user, $pass);
+$conn = new mysqli($host, $user, $pass, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-// Select the database (if it exists)
-$conn->select_db("bakewise"); 
 
 // Execute the ALTER TABLE statement
 $sql = "ALTER TABLE users

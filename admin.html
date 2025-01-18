@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BakeWise</title>
-    <link rel="stylesheet" href="styless.css"> 
+    <title>BakeWise Admin Panel</title>
+    <link rel="stylesheet" href="admin.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
@@ -14,22 +14,77 @@
     <label for="toggler" class="fas fa-bars"></label>
 
     <a href="#" class="logo">BakeWise<span>.</span></a>
-
     <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="cart.html">Cart</a>
-        <a href="customers.html">Customers</a>
-        <a href="logout.php">Logout</a>
-        
+        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="products.html"><i class="fas fa-box"></i> Products</a>
+        <a href="categories.html"><i class="fas fa-tags"></i> Categories</a>
+        <a href="orders.html"><i class="fas fa-shopping-cart"></i> Orders</a>
+        <a href="customers.html"><i class="fas fa-users"></i> Customers</a>
+        <a href="reports.html"><i class="fas fa-chart-line"></i> Reports</a>
+        <a href="settings.html"><i class="fas fa-cogs"></i> Settings</a>
+        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+        <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </nav>
+    
 </header>
 
 <section class="home" id="home">
+    <div class="image">
+        <img src="images/bg2.jpeg" alt="">
+    </div>
     <div class="content">
         <h3>Welcome, Admin!</h3>
         <span>Manage your bakery efficiently</span>
-        <p>.</p>
+        <p>Use the menu to access different sections of the admin panel.</p>
+    </div>
+</section>
+
+
+<section class="dashboard" id="dashboard">
+    <h2>Dashboard Overview</h2>
+    <div class="stats">
+        <div class="box">
+            <h3>Total Products</h3>
+            <p>150</p>
+        </div>
+        <div class="box">
+            <h3>Orders Today</h3>
+            <p>45</p>
+        </div>
+        <div class="box">
+            <h3>Total Customers</h3>
+            <p>320</p>
+        </div>
+        <div class="box">
+            <h3>Monthly Revenue</h3>
+            <p>$12,500</p>
+        </div>
+    </div>
+</section>
+
+<section class="features" id="features">
+    <h2>Key Features</h2>
+    <div class="box-container">
+        <div class="box">
+            <i class="fas fa-box"></i>
+            <h3>Manage Products</h3>
+            <p>Add, edit, or remove products from the inventory.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-tags"></i>
+            <h3>Categories</h3>
+            <p>Organize products into categories for easier browsing.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-shopping-cart"></i>
+            <h3>Order Management</h3>
+            <p>View and update the status of customer orders.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-chart-line"></i>
+            <h3>Reports</h3>
+            <p>Analyze sales and inventory trends.</p>
+        </div>
     </div>
 </section>
 
@@ -37,9 +92,9 @@
     <div class="box-container">
         <div class="box">
             <h3>Quick Links</h3>
-            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
             <a href="products.html">Products</a>
-            <a href="customers.html">Customers</a>
+            <a href="categories.html">Categories</a>
         </div>
         <div class="box">
             <h3>Contact Info</h3>
