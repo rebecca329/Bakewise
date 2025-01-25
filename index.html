@@ -26,12 +26,20 @@
             <a href="#contact">Contact</a>
 
         </nav>
-
+        <div class="search-icon">
+            <a href="#" class="fas fa-search" id="search-btn"></a>
+        </div>
+        <div class="search-bar" id="search-bar">
+            <input type="text" placeholder="Search products..." id="search-input" />
+            <button id="search-submit">Search</button>
+        </div>
         <div class="icons">
             <a href="#" class="fas fa-heart"></a>
             <a href="#" class="fas fa-shopping-cart"></a>
             <a href="index.php" class="fas fa-user"></a>
         </div>
+        
+        
 
     </header>
      <!--header section ends-->
@@ -590,7 +598,8 @@
                 .catch(error => console.error('Error:', error));
         });
     });
+
     </script>
-    
+    <script src="home.js"></script>
 </body>
  </html>

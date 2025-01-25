@@ -15,7 +15,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $imageType = $_FILES['image_path']['type'];
 
         // Define the target directory to save the image
-        $targetDir = "uploads/"; 
+        $targetDir = "uploads/";
+        
+        // Check if the directory exists; if not, create it
+        if (!is_dir($targetDir)) {
+            mkdir($targetDir, 0755, true); // Create directory with proper permissions
+        }
+
         $targetFile = $targetDir . basename($imageName);
 
         // Check if the file is an image
@@ -25,15 +31,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Create a database connection
                 $conn = new mysqli('localhost', 'root', '', 'admin');
 
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
                 // Insert into the database
                 $stmt = $conn->prepare("INSERT INTO productsss (name, price, original_price, discount_percentage, image_path, category_id) VALUES (?, ?, ?, ?, ?, ?)");
-                $stmt->bind_param("sddissi", $name, $price, $original_price, $discount_percentage, $targetFile, $category_id);
-                
+                $stmt->bind_param("sddisi", $name, $price, $original_price, $discount_percentage, $targetFile, $category_id);
+
+
                 if ($stmt->execute()) {
                     echo "Product added successfully!";
                 } else {
                     echo "Error: " . $stmt->error;
                 }
+
+                $stmt->close();
+                $conn->close();
             } else {
                 echo "Sorry, there was an error uploading your file.";
             }

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BakeWise - Reports</title>
+    <style>
+
+
+/* Report Section Styles */
+#report-section {
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+#report-section h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.report-summary, .order-trends {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.report-summary .box, .order-trends .box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 22%;
+    margin: 10px 0;
+}
+
+.report-summary .box h3, .order-trends .box h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.report-summary .box p, .order-trends .box p {
+    font-size: 20px;
+    color: #ff6600;
+    font-weight: bold;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer .box-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .box {
+    width: 45%;
+}
+
+.footer .box h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer .box a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.footer .box a:hover {
+    color: white;
+}
+
+.footer .credit {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.footer .credit span {
+    font-weight: bold;
+    color: #ff6600;
+}
+
+    </style>
+    
+    <link rel="stylesheet" href="admin.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="#" class="logo">BakeWise<span>.</span></a>
+    <nav class="navbar">
+        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="products.php"><i class="fas fa-box"></i> Products</a>
+        <a href="categories.html"><i class="fas fa-tags"></i> Categories</a>
+        <a href="order.php"><i class="fas fa-shopping-cart"></i> Orders</a>
+        <a href="customers.html"><i class="fas fa-users"></i> Customers</a>
+        <a href="reports.html"><i class="fas fa-chart-line"></i> Reports</a>
+        <a href="setting.html"><i class="fas fa-cogs"></i> Settings</a>
+        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+        <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </nav>
+    
+</header>
+
+<section class="home" id="home">
+    <div class="image">
+        <img src="images/bg2.jpeg" alt="">
+    </div>
+    <div class="content">
+        <h3>Reports</h3>
+        <span>Analyze and View Detailed Reports</span>
+        <p>Generate reports on sales, orders, and customer activity.</p>
+    </div>
+</section>
+
+<section class="report-section" id="report-section">
+    <h2>Sales and Inventory Report</h2>
+    <div class="report-summary">
+        <div class="box">
+            <h3>Total Sales This Month</h3>
+            <p>$12,500</p>
+        </div>
+        <div class="box">
+            <h3>Total Products Sold</h3>
+            <p>1,200 units</p>
+        </div>
+        <div class="box">
+            <h3>Top-Selling Product</h3>
+            <p>Chocolate Cake</p>
+        </div>
+        <div class="box">
+            <h3>Low Stock Alerts</h3>
+            <p>5 items</p>
+        </div>
+    </div>
+    
+    <h2>Order Trends</h2>
+    <div class="order-trends">
+        <div class="box">
+            <h3>Orders This Week</h3>
+            <p>250</p>
+        </div>
+        <div class="box">
+            <h3>Orders This Month</h3>
+            <p>900</p>
+        </div>
+        <div class="box">
+            <h3>New Customer Registrations</h3>
+            <p>50</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="products.html">Products</a>
+            <a href="categories.html">Categories</a>
+        </div>
+        <div class="box">
+            <h3>Contact Info</h3>
+            <a href="#">+977 9811111111</a>
+            <a href="#">Bakewise@gmail.com</a>
+            <a href="#">Pokhara, Nepal</a>
+        </div>
+    </div>
+    <div class="credit">Created by <span>Team Shrek</span> | All rights reserved</div>
+</footer>
+
+</body>
+</html>

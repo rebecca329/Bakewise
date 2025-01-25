@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
     $delete_sql = "DELETE FROM productsss WHERE id = $product_id";
     
     if ($conn->query($delete_sql)) {
-        header("Location: index.php");  // Redirect back to the products page
+        header("Location: products.php");  // Redirect back to the products page
     } else {
         echo "Error: " . $conn->error;
     }

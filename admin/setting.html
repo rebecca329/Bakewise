@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BakeWise Admin Settings</title>
+    <style>/* Settings Section */
+        section.settings {
+            padding: 50px 20px;
+            background-color: #fff;
+            margin-top: 80px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        section.settings h2 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .settings-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .settings-form h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .settings-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .settings-form .form-group label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .settings-form .form-group input,
+        .settings-form .form-group select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+        }
+        
+        .settings-form .form-group input:focus,
+        .settings-form .form-group select:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        
+        .settings-form .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .settings-form .submit-btn:hover {
+            background-color: #45a049;
+        }
+        
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        footer .box-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        
+        footer .box {
+            width: 200px;
+        }
+        
+        footer .box a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        footer .credit {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        </style>
+    <link rel="stylesheet" href="admin.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="#" class="logo">BakeWise<span>.</span></a>
+    <nav class="navbar">
+        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="products.php"><i class="fas fa-box"></i> Products</a>
+        <a href="categories.html"><i class="fas fa-tags"></i> Categories</a>
+        <a href="order.php"><i class="fas fa-shopping-cart"></i> Orders</a>
+        <a href="customers.html"><i class="fas fa-users"></i> Customers</a>
+        <a href="reports.html"><i class="fas fa-chart-line"></i> Reports</a>
+        <a href="settings.html"><i class="fas fa-cogs"></i> Settings</a>
+        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+        <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </nav>
+    
+</header>
+
+<section class="settings" id="settings">
+    <h2>Admin Settings</h2>
+    <div class="settings-form">
+        <h3>Update Your Settings</h3>
+        <form action="Settingupd.php" method="POST">
+            <!-- Change Password -->
+            <div class="form-group">
+                <label for="old-password">Old Password:</label>
+                <input type="password" id="old-password" name="old-password" required>
+            </div>
+            <div class="form-group">
+                <label for="new-password">New Password:</label>
+                <input type="password" id="new-password" name="new-password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm New Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+
+            <!-- Email Notifications -->
+            <div class="form-group">
+                <label for="notifications">Enable Email Notifications:</label>
+                <select id="notifications" name="notifications">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Save Settings</button>
+        </form>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="products.html">Products</a>
+            <a href="categories.html">Categories</a>
+        </div>
+        <div class="box">
+            <h3>Contact Info</h3>
+            <a href="#">+977 9811111111</a>
+            <a href="#">Bakewise@gmail.com</a>
+            <a href="#">Pokhara, Nepal</a>
+        </div>
+    </div>
+    <div class="credit">Created by <span>Team Shrek</span> | All rights reserved</div>
+</footer>
+
+</body>
+</html>

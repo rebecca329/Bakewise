@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BakeWise Admin Profile</title>
+    <style>
+        /* Update Profile Section */
+        .update-profile {
+            padding: 2rem 9%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .update-profile h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .update-profile form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .update-profile label {
+            font-size: 1.6rem;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        .update-profile input {
+            padding: 12px;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            padding: 12px 20px;
+            font-size: 1.6rem;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #575757;
+        }
+
+        /* Edit Profile Button */
+        .edit-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #333;
+            color: white;
+            font-size: 1.6rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .edit-btn:hover {
+            background-color: #575757;
+        }
+
+        /* Profile Section */
+        .profile {
+            padding: 2rem 9%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .profile h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .profile-img img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        .profile-info {
+            max-width: 400px;
+        }
+
+        .profile-info h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-info p {
+            font-size: 1.6rem;
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<header>
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="#" class="logo">BakeWise<span>.</span></a>
+    <nav class="navbar">
+        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="products.php"><i class="fas fa-box"></i> Products</a>
+        <a href="categories.html"><i class="fas fa-tags"></i> Categories</a>
+        <a href="order.php"><i class="fas fa-shopping-cart"></i> Orders</a>
+        <a href="customers.html"><i class="fas fa-users"></i> Customers</a>
+        <a href="reports.html"><i class="fas fa-chart-line"></i> Reports</a>
+        <a href="settings.html"><i class="fas fa-cogs"></i> Settings</a>
+        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+        <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </nav>
+</header>
+
+<section class="profile" id="profile">
+    <h2>Admin Profile</h2>
+    <div class="profile-container">
+        <div class="profile-img">
+            <img src="images/adminavatar.png" alt="Admin Avatar">
+        </div>
+        <div class="profile-info">
+            <h3>Admin Name</h3>
+            <p><strong>Email:</strong> admin@bakewise.com</p>
+            <p><strong>Phone:</strong> +977 9811111111</p>
+            <p><strong>Location:</strong> Pokhara, Nepal</p>
+        </div>
+    </div>
+    <a href="editprofile.php" class="edit-btn">Edit Profile</a>
+</section>
+
+<section class="update-profile">
+    <h2>Update Profile</h2>
+    <form action="updateprofile.php" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" value="Admin Name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" value="admin@bakewise.com" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" value="+977 9811111111" required>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" value="Pokhara, Nepal" required>
+
+        <button type="submit" class="submit-btn">Update Profile</button>
+    </form>
+</section>
+
+<footer class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="products.html">Products</a>
+            <a href="categories.html">Categories</a>
+        </div>
+        <div class="box">
+            <h3>Contact Info</h3>
+            <a href="#">+977 9811111111</a>
+            <a href="#">Bakewise@gmail.com</a>
+            <a href="#">Pokhara, Nepal</a>
+        </div>
+    </div>
+    <div class="credit">Created by <span>Team Shrek</span> | All rights reserved</div>
+</footer>
+
+</body>
+</html>

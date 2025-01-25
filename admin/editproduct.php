@@ -44,8 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <label for="discount_percentage">Discount Percentage:</label>
     <input type="number" id="discount_percentage" name="discount_percentage" value="<?= $product['discount_percentage'] ?>"><br><br>
 
-    <label for="image_path">Image Path:</label>
-    <input type="text" id="image_path" name="image_path" value="<?= $product['image_path'] ?>"><br><br>
+    <div class="form-group">
+                <label for="image_path">Choose an Image:</label>
+                <input type="file" id="image_path" name="image_path" accept="image/*" required>
+            </div>
 
     <label for="category_id">Category:</label>
     <select id="category_id" name="category_id" required>

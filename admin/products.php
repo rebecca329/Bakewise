@@ -10,53 +10,55 @@
 <body>
 
     <header>
-        <input type="checkbox" id="toggler">
-        <label for="toggler" class="fas fa-bars"></label>
     </header>
 
     <!-- Add Product Form -->
     <section class="add-product">
-        <form action="add_product.php" method="POST" enctype="multipart/form-data">
-            <label for="name">Product Name:</label>
-            <input type="text" id="name" name="name" required><br><br>
+        <form action="addproduct.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Product Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
 
-            <label for="price">Price:</label>
-            <input type="number" step="0.01" id="price" name="price" required><br><br>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" step="0.01" id="price" name="price" required>
+            </div>
 
-            <label for="original_price">Original Price:</label>
-            <input type="number" step="0.01" id="original_price" name="original_price"><br><br>
+            <div class="form-group">
+                <label for="original_price">Original Price:</label>
+                <input type="number" step="0.01" id="original_price" name="original_price">
+            </div>
 
-            <label for="discount_percentage">Discount Percentage:</label>
-            <input type="number" id="discount_percentage" name="discount_percentage"><br><br>
+            <div class="form-group">
+                <label for="discount_percentage">Discount Percentage:</label>
+                <input type="number" id="discount_percentage" name="discount_percentage">
+            </div>
 
-           <label for="image_path">Choose an Image:</label>
-<input type="file" id="image_path" name="image_path" accept="image/*" required><br><br>
+            <div class="form-group">
+                <label for="image_path">Choose an Image:</label>
+                <input type="file" id="image_path" name="image_path" accept="image/*" required>
+            </div>
 
+            <div class="form-group">
+                <label for="category_id">Category:</label>
+                <select id="category_id" name="category_id" required>
+                    <!-- PHP code to fetch categories from the database -->
+                    <?php
+                    // Assuming you have a connection to the database, this PHP code fetches categories
+                    $conn = new mysqli('localhost', 'root', '', 'admin');
+                    $result = $conn->query("SELECT id, name FROM categories");
 
-            <label for="category_id">Category:</label>
-            <select id="category_id" name="category_id" required>
-                <!-- PHP code to fetch categories from the database -->
-                <?php
-                // Assuming you have a connection to the database, this PHP code fetches categories
-                $conn = new mysqli('localhost', 'root', '', 'admin');
-                $result = $conn->query("SELECT id, name FROM categories");
-                
-                while ($row = $result->fetch_assoc()) {
-                    echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
-                }
-                ?>
-            </select><br><br>
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
+                    }
+                    ?>
+                </select>
+            </div>
 
-            <!-- <label for="product_select">Choose a Product:</label>
-            <select id="product_select" name="product_select">
-                <option value="brownie">Brownie</option>
-                <option value="lemon_cookie">Lemon Cookie</option>
-                <option value="banana_bread">Banana Bread</option>
-                <option value="plain_bread">Plain Bread</option>
-                <option value="chocolate_chip_cookie">Chocolate Chip Cookie</option>
-            </select><br><br> -->
-            <input type="submit" value="Add Product"><a href="addproduct.php"></a>
-
+            <div class="form-group">
+                <input type="submit" value="Add Product">
+            </div>
         </form>
     </section>
 
