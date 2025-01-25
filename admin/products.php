@@ -55,8 +55,8 @@
                 <option value="plain_bread">Plain Bread</option>
                 <option value="chocolate_chip_cookie">Chocolate Chip Cookie</option>
             </select><br><br> -->
+            <input type="submit" value="Add Product"><a href="addproduct.php"></a>
 
-            <input type="submit" value="Add Product">
         </form>
     </section>
 
