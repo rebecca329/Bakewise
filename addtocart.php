@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db_connect.php'; // Connection to the database
+include 'db.php'; // Connection to the database
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $productId = intval($_POST['product_id']);
