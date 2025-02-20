@@ -1,8 +1,7 @@
 <?php
-session_start(); // Start the session to access wishlist
-include 'pdatabase.php'; // Include the database connection
+session_start(); 
+include 'pdatabase.php'; 
 
-// Initialize the wishlist session if not already initialized
 if (!isset($_SESSION['wishlist'])) {
     $_SESSION['wishlist'] = [];
 }
@@ -41,7 +40,7 @@ if (!isset($_SESSION['wishlist'])) {
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                // Properly integrate PHP variables into the HTML
+               
                 echo '
                 <div class="box">
                     <div class="image">
@@ -70,13 +69,13 @@ if (!isset($_SESSION['wishlist'])) {
     </section>
 
     <script>
-        // Function to toggle wishlist
+       
         function toggleWishlist(productId) {
             const heartIcon = document.querySelector(`.fas.fa-heart[data-id='${productId}']`);
             const isInWishlist = heartIcon.classList.contains('active');
             const action = isInWishlist ? 'remove' : 'add';
 
-            // Send a request to add/remove product from wishlist
+           
             fetch(`wishlist.php?action=${action}&productId=${productId}`, {
                 method: 'GET',
             })
@@ -96,7 +95,7 @@ if (!isset($_SESSION['wishlist'])) {
             });
         }
 
-        // Add to Cart functionality
+        
         document.querySelectorAll(".cart-btn").forEach((btn) => {
             btn.addEventListener("click", (e) => {
                 e.preventDefault();

@@ -6,7 +6,6 @@ document.querySelectorAll(".cart-btn").forEach(button => {
         const name = this.dataset.name;
         const price = parseFloat(this.dataset.price);
 
-        // Send data to the server
         fetch("add_to_cart.php", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },

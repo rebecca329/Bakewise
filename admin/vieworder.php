@@ -1,19 +1,19 @@
 <?php
-require 'dbconnection.php'; // Ensure this file exists and is correct
+require 'dbconnection.php'; 
 
-// Validate and sanitize the 'id' parameter
+
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die("Invalid or missing order ID.");
 }
 
-$order_id = intval($_GET['id']); // Convert 'id' to an integer for security
+$order_id = intval($_GET['id']); 
 
-// Fetch the order details from the database
+
 $sql = "SELECT * FROM orders WHERE id = $order_id";
 $result = $conn->query($sql);
 
 if ($result && $result->num_rows > 0) {
-    $order = $result->fetch_assoc(); // Fetch order details into the $order array
+    $order = $result->fetch_assoc(); 
 } else {
     die("Order not found.");
 }
@@ -23,7 +23,7 @@ if ($result && $result->num_rows > 0) {
 <head>
     <title>View Order</title>
     <style>
-        /* General Styling */
+       
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -39,7 +39,7 @@ if ($result && $result->num_rows > 0) {
             margin-top: 20px;
         }
 
-        /* Container */
+      
         .container {
             max-width: 600px;
             margin: 30px auto;
@@ -49,7 +49,7 @@ if ($result && $result->num_rows > 0) {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Paragraph Styling */
+       
         p {
             margin: 15px 0;
             font-size: 16px;
@@ -60,7 +60,7 @@ if ($result && $result->num_rows > 0) {
             color: #000;
         }
 
-        /* Button Styling */
+        
         a {
             display: inline-block;
             padding: 10px 20px;

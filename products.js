@@ -1,6 +1,6 @@
-// script.js
+
 document.addEventListener("DOMContentLoaded", () => {
-    // Get the product ID from the URL
+   
     const params = new URLSearchParams(window.location.search);
     const productId = params.get("id");
 
@@ -13,23 +13,21 @@ document.addEventListener("DOMContentLoaded", () => {
         5: { name: "Chocolate Chip Cookie", price: 90, image: "images/cookie.jpg", description: "Crunchy chocolate chip cookie." },
     };
 
-    // Find the product using the ID
+    
     const product = products[productId];
 
     if (product) {
-        // Fill the details page with product info
+        
         document.getElementById("product-name").textContent = product.name;
         document.getElementById("product-price").textContent = product.price;
         document.getElementById("product-image").src = product.image;
         document.getElementById("product-description").textContent = product.description;
-
-        // Add to cart button
         document.getElementById("add-to-cart").addEventListener("click", () => {
             const quantity = document.getElementById("quantity").value;
             alert(`${product.name} (x${quantity}) added to cart!`);
         });
     } else {
-        // Show an error if product not found
+       
         document.getElementById("product-details").innerHTML = "<p>Product not found.</p>";
     }
     

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BakeWise Admin Panel - Categories</title>
     <style>
-        /* Categories Section */
+        
 .categories-section {
     padding: 2rem;
     background-color: #f9f9f9;
@@ -64,7 +64,6 @@
     background-color: #4cae4c;
 }
 
-/* Categories Table */
 .categories-table {
     width: 100%;
     border-collapse: collapse;
@@ -114,7 +113,7 @@
     background-color: #c9302c;
 }
 
-/* Footer */
+
 .footer {
     background-color: #333;
     color: #fff;
@@ -220,9 +219,9 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Example row, dynamically filled with category data from the database -->
+           
             <?php
-            // Assuming you have a connection to the database
+          
             $conn = new mysqli('localhost', 'root', '', 'admin');
             $result = $conn->query("SELECT id, name, description FROM categories");
             

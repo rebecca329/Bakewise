@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product List</title>
     <style>
-        /* General Reset */
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Product Box Container */
         .box {
             background-color: #fff;
             border-radius: 12px;
@@ -31,7 +30,7 @@
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
         }
 
-        /* Image Section */
+  
         .box .image {
             position: relative;
             overflow: hidden;
@@ -48,7 +47,7 @@
             transform: scale(1.1);
         }
 
-        /* Icons Section */
+      
         .box .icons {
             display: flex;
             justify-content: center;
@@ -71,7 +70,7 @@
             transform: scale(1.1);
         }
 
-        /* Content Section */
+       
         .box .content {
             padding: 15px;
         }
@@ -90,7 +89,7 @@
             font-weight: bold;
         }
 
-        /* Cart Button Styling */
+    
         .cart-btn {
             background-color: #4CAF50;
             color: white;
@@ -107,7 +106,7 @@
             background-color: #45a049;
         }
 
-        /* Media Query for Responsiveness */
+       
         @media (max-width: 768px) {
             .box {
                 width: 90%;
@@ -115,16 +114,14 @@
             }
         }
     </style>
-    <!-- Include Font Awesome for icons -->
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="product-container">
         <?php
-        // Fetching products from the database
+       
         $conn = new mysqli('localhost', 'root', '', 'admin');
-
-        // Checking the connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
@@ -133,7 +130,7 @@
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
-            // Loop through the fetched products and display them
+        
             while ($row = $result->fetch_assoc()) {
                 echo "
                 <div class='box'>

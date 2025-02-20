@@ -2,19 +2,19 @@
 session_start();
 include 'pdatabase.php';  
 
-// Check if wishlist session exists, if not, initialize it as an empty array
+
 if (!isset($_SESSION['wishlist'])) {
     $_SESSION['wishlist'] = [];
 }
 
-// Handle the CRUD operations based on the action parameter
+
 if (isset($_GET['action']) && isset($_GET['productId'])) {
     $action = $_GET['action'];
     $productId = (int) $_GET['productId'];
 
-    // Perform actions based on the 'action' parameter
+    
     if ($action == 'add') {
-        // Add item to the wishlist if not already added
+       
         if (!in_array($productId, $_SESSION['wishlist'])) {
             $_SESSION['wishlist'][] = $productId;
             $response = ['success' => true, 'message' => 'Product added to wishlist!'];
@@ -22,7 +22,7 @@ if (isset($_GET['action']) && isset($_GET['productId'])) {
             $response = ['success' => false, 'message' => 'Product is already in the wishlist.'];
         }
     } elseif ($action == 'remove') {
-        // Remove item from wishlist
+        
         if (($key = array_search($productId, $_SESSION['wishlist'])) !== false) {
             unset($_SESSION['wishlist'][$key]);
             $response = ['success' => true, 'message' => 'Product removed from wishlist!'];
@@ -31,7 +31,7 @@ if (isset($_GET['action']) && isset($_GET['productId'])) {
         }
     }
 
-    // Return a JSON response with the result
+    
     echo json_encode($response);
     exit;
 }
@@ -45,7 +45,7 @@ if (isset($_GET['action']) && isset($_GET['productId'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wishlist - BakeWise</title>
     <style>
-        /* Box container for the wishlist items */
+        
         .wishlist .box-container {
             display: flex;
             flex-wrap: wrap;
@@ -53,9 +53,9 @@ if (isset($_GET['action']) && isset($_GET['productId'])) {
             justify-content: space-around;
         }
 
-        /* Styling for each product box */
+      
         .wishlist .box {
-            width: 300px; /* Limit the width of the box */
+            width: 300px; 
             box-sizing: border-box;
             border: 1px solid #ddd;
             padding: 15px;
@@ -67,17 +67,17 @@ if (isset($_GET['action']) && isset($_GET['productId'])) {
         }
 
         .wishlist .box:hover {
-            transform: scale(1.05); /* Slight zoom effect on hover */
+            transform: scale(1.05); 
         }
 
-        /* Ensure images are responsive and fit within the box */
+        
         .wishlist .box .image img {
-            max-width: 100%;  /* Limit image width to box width */
-            height: auto;     /* Maintain aspect ratio */
-            border-radius: 8px;  /* Optional: rounded corners for the images */
+            max-width: 100%;  
+            height: auto;    
+            border-radius: 8px;  
         }
 
-        /* Product name and price styling */
+        
         .wishlist .box .content {
             margin-top: 10px;
         }
@@ -94,7 +94,7 @@ if (isset($_GET['action']) && isset($_GET['productId'])) {
             font-weight: 600;
         }
 
-        /* Style for icons/buttons (e.g., heart icon) */
+        
         .wishlist .box .icons {
             margin-top: 10px;
         }
@@ -113,7 +113,7 @@ if (isset($_GET['action']) && isset($_GET['productId'])) {
         }
 
         .wishlist .box .icons button:hover {
-            color: #ff4081; /* Hover effect */
+            color: #ff4081; 
         }
     </style>
     <link rel="stylesheet" href="styless.css">
@@ -139,9 +139,9 @@ if (isset($_GET['action']) && isset($_GET['productId'])) {
         <h2>Your Wishlist</h2>
         <div class="box-container">
         <?php
-        // Fetching all products from the database
+       
         if (!empty($_SESSION['wishlist'])) {
-            // Only proceed if the wishlist is not empty
+           
             $sql = "SELECT id, name, image, price FROM products WHERE id IN (" . implode(',', $_SESSION['wishlist']) . ")";
             $result = $conn->query($sql);
 
@@ -177,7 +177,7 @@ if (isset($_GET['action']) && isset($_GET['productId'])) {
         function toggleWishlist(event, productId) {
             const action = event.target.classList.contains('active') ? 'remove' : 'add';
 
-            // Send a request to add/remove product from wishlist
+           
             fetch(`wishlist.php?action=${action}&productId=${productId}`, {
                 method: 'GET',
             })

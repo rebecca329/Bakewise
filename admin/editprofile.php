@@ -1,16 +1,15 @@
 <?php
 session_start();
 
-// Include database connection
+
 include('dbconnection.php');
 
-// Ensure the user is logged in by checking the session
+
 if (!isset($_SESSION['user_id'])) {
     echo "User not logged in!";
     exit;
 }
 
-// Get current user details from the database
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT name, email, phone, location FROM users WHERE id = ?";
 if ($stmt = $conn->prepare($sql)) {

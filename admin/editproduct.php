@@ -1,5 +1,4 @@
 <?php
-// Fetch the product details for editing
 if (isset($_GET['id'])) {
     $product_id = $_GET['id'];
     $conn = new mysqli('localhost', 'root', '', 'admin');
@@ -11,7 +10,7 @@ if (isset($_GET['id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Update the product in the database
+   
     $name = $_POST['name'];
     $price = $_POST['price'];
     $original_price = $_POST['original_price'] ?? NULL;

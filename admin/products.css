@@ -1,4 +1,4 @@
-/* General Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +24,7 @@ header label {
     cursor: pointer;
 }
 
-/* Add Product Form */
+
 .add-product {
     background-color: #fff;
     margin: 40px auto;
@@ -70,7 +70,7 @@ header label {
     background-color: #218838;
 }
 
-/* Product List Section */
+
 .products {
     background-color: #fff;
     padding: 40px 20px;
@@ -91,7 +91,7 @@ header label {
     gap: 20px;
 }
 
-/* Product Box */
+
 .box {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -143,7 +143,7 @@ header label {
     color: #888;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
     .product-container {
         flex-direction: column;
@@ -180,7 +180,7 @@ header label {
 }
 
 
-/* General Styles */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
@@ -194,7 +194,7 @@ h2 {
     margin: 20px 0;
 }
 
-/* Product Container */
+
 .product-container {
     display: flex;
     flex-wrap: wrap;
@@ -203,7 +203,7 @@ h2 {
     padding: 20px;
 }
 
-/* Product Box */
+
 .box {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -219,7 +219,7 @@ h2 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Product Image */
+
 .box .image {
     position: relative;
     height: 200px;
@@ -233,7 +233,7 @@ h2 {
     border-bottom: 1px solid #ddd;
 }
 
-/* Icons Overlay */
+
 .box .icons {
     position: absolute;
     top: 10px;
@@ -266,7 +266,7 @@ h2 {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Product Content */
+
 .box .content {
     padding: 15px;
     text-align: center;
@@ -284,7 +284,6 @@ h2 {
     color: #555;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     .product-container {
         flex-direction: column;

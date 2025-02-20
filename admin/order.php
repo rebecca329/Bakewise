@@ -1,18 +1,17 @@
 <?php
-// Database connection
 $servername = "localhost";
-$username = "root"; // Change if your database username is different
-$password = ""; // Add your database password
+$username = "root"; 
+$password = ""; 
 $dbname = "admin";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch orders
+
 $sql = "SELECT * FROM orders";
 $result = $conn->query($sql);
 ?>

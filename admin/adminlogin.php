@@ -49,7 +49,7 @@ input {
 
 .input-group {
     padding: 1% 0;
-    position: relative; /* Fixed spelling */
+    position: relative; 
 }
 
 .input-group i {
@@ -59,8 +59,8 @@ input {
 
 .input:focus {
     background-color: transparent;
-    outline: none; /* Fixed syntax */
-    border-bottom: 2px solid hsl(327, 90%, 28%); /* Fixed spelling */
+    outline: none; 
+    border-bottom: 2px solid hsl(327, 90%, 28%); 
 }
 
 input::placeholder {
@@ -73,11 +73,11 @@ label {
     left: 1.2em;
     top: -1.3em;
     cursor: auto;
-    transition: 0.35s ease all; /* Added 's' unit */
+    transition: 0.35s ease all; 
 }
 
 input:focus~label,
-input:not(:placeholder-shown)~label { /* Fixed spelling */
+input:not(:placeholder-shown)~label { 
     top: -3em;
     color: hsl(327, 90%, 28%);
     font-size: 15px;
@@ -184,7 +184,7 @@ if (isset($_POST['adminLogin'])) {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // Admin login successful, start session and redirect to the admin page
+       
         $_SESSION['adminEmail'] = $email;
         header("Location: admin.php");       
         exit();

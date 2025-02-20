@@ -12,7 +12,7 @@
     <header>
     </header>
 
-    <!-- Add Product Form -->
+   
     <section class="add-product">
         <form action="addproduct.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
@@ -43,9 +43,9 @@
             <div class="form-group">
                 <label for="category_id">Category:</label>
                 <select id="category_id" name="category_id" required>
-                    <!-- PHP code to fetch categories from the database -->
+                    
                     <?php
-                    // Assuming you have a connection to the database, this PHP code fetches categories
+                    
                     $conn = new mysqli('localhost', 'root', '', 'admin');
                     $result = $conn->query("SELECT id, name FROM categories");
 

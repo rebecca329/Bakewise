@@ -19,7 +19,7 @@ $order = $result->fetch_assoc();
 <head>
     <title>Edit Order</title>
     <style>
-        /* General Styling */
+     
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -35,7 +35,7 @@ $order = $result->fetch_assoc();
             margin-top: 20px;
         }
 
-        /* Box Styling */
+        
         .box {
             max-width: 600px;
             margin: 30px auto;
@@ -45,7 +45,7 @@ $order = $result->fetch_assoc();
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Form Styling */
+    
         form {
             display: flex;
             flex-direction: column;
