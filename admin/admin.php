@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['adminEmail'])) {
+    header("Location: adminLogin.php"); 
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +65,7 @@
         </div>
         <div class="box">
             <h3>Monthly Revenue</h3>
-            <p>$12,500</p>
+            <p>12,500</p>
         </div>
     </div>
 </section>
@@ -95,7 +102,7 @@
             <h3>Quick Links</h3>
             <a href="dashboard.html">Dashboard</a>
             <a href="products.html">Products</a>
-            <a href="categories.html">Categories</a>
+            <a href="categories.php">Categories</a>
         </div>
         <div class="box">
             <h3>Contact Info</h3>

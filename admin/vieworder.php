@@ -86,7 +86,7 @@ if ($result && $result->num_rows > 0) {
         <p><strong>Customer Name:</strong> <?php echo htmlspecialchars($order['customer_name']); ?></p>
         <p><strong>Product:</strong> <?php echo htmlspecialchars($order['product']); ?></p>
         <p><strong>Quantity:</strong> <?php echo $order['quantity']; ?></p>
-        <p><strong>Total Price:</strong> $<?php echo $order['total_price']; ?></p>
+        <p><strong>Total Price:</strong> Rs<?php echo $order['total_price']; ?></p>
         <p><strong>Status:</strong> <?php echo $order['status']; ?></p>
         <a href="order.php">Back to Orders</a>
     </div>

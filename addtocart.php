@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Redirect to cart page
-    header('Location: cart.php');
+    header('Location: cart.html');
     exit();
 } else {
     http_response_code(400);

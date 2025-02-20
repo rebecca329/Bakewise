@@ -26,60 +26,164 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="admin.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-       body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color:  pink;
-            padding: 10px 20px;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header .logo {
-            font-size: 24px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        header nav a {
-            text-decoration: none;
-            color: #fff;
-            margin: 0 10px;
-            font-size: 16px;
-        }
-        .orders-table {
-            width: 90%;
-            margin: 30px auto;
-            border-collapse: collapse;
-            text-align: left;
-        }
-        .orders-table thead {
-            background-color: pink;
-            color: #fff;
-        }
-        .orders-table th, .orders-table td {
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-        .orders-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .btn {
-            padding: 8px 12px;
-            background-color: #f76c6c;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .btn:hover {
-            background-color: #e65b5b;
-        }
+      :root {
+    --pink: pink;
+    --light-gray: #f9f9f9;
+    --dark-gray: #333;
+    --white: #fff;
+    --red: #f76c6c;
+    --red-hover: #e65b5b;
+    --orange: orange;
+    --green: green;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+}
+
+body {
+    line-height: 1.6;
+    background: var(--light-gray);
+    color: var(--dark-gray);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 3rem;
+    color: var(--dark-gray);
+    font-weight: bold;
+}
+
+header .logo span {
+    color: var(--pink);
+}
+
+header nav a {
+    font-size: 2rem;
+    margin-left: 2rem;
+    color: var(--dark-gray);
+    transition: color 0.2s ease;
+}
+
+header nav a:hover {
+    color: var(--pink);
+}
+
+section {
+    padding: 5rem 9%;
+    margin-top: 80px;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.orders-table thead {
+    background-color: var(--pink);
+    color: var(--white);
+    text-align: left;
+}
+
+.orders-table th, .orders-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.orders-table tr:nth-child(even) {
+    background-color: var(--light-gray);
+}
+
+.orders-table td span {
+    font-weight: bold;
+}
+
+.btn {
+    padding: 8px 12px;
+    background-color: var(--red);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: var(--red-hover);
+}
+
+.footer {
+    background: #f3f3f3;
+    padding: 3rem 9%;
+    color: var(--dark-gray);
+    text-align: center;
+}
+
+.footer .credit {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    color: #555;
+}
+
+.footer .credit span {
+    color: var(--pink);
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav a {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
     </style>
 </head>
 <body>
@@ -117,7 +221,7 @@ $result = $conn->query($sql);
                 <td><?php echo htmlspecialchars($row['customer_name']); ?></td>
                 <td><?php echo htmlspecialchars($row['product']); ?></td>
                 <td><?php echo $row['quantity']; ?></td>
-                <td>$<?php echo $row['total_price']; ?></td>
+                <td>Rs<?php echo $row['total_price']; ?></td>
                 <td>
                     <span style="color: 
                         <?php echo ($row['status'] === 'Delivered' ? 'green' : ($row['status'] === 'Pending' ? 'orange' : 'red')); ?>;">

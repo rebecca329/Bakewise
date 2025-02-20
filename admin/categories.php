@@ -228,15 +228,16 @@
             
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>
-                        <td>" . $row['id'] . "</td>
-                        <td>" . $row['name'] . "</td>
-                        <td>" . $row['description'] . "</td>
+                        <td>{$row['id']}</td>
+                        <td>{$row['name']}</td>
+                        <td>{$row['description']}</td>
                         <td>
-                            <a href='edit-category.php?id=" . $row['id'] . "' class='btn-edit'>Edit</a>
-                            <a href='delete-category.php?id=" . $row['id'] . "' class='btn-delete'>Delete</a>
-                        </td>
+                            <a href='categoriesedit.php?id={$row['id']}' class='btn-edit'>Edit</a>
+                            <a href='categoriesdel.php?id={$row['id']}' class='btn-delete' onclick=\"return confirm('Are you sure you want to delete this category?');\">Delete</a>
+                        </td>  
                       </tr>";
             }
+            
             ?>
         </tbody>
     </table>

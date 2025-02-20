@@ -9,15 +9,9 @@
     <!--font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-
-    <!--custome css file link-->
-    <!--  <link rel="stylesheet" href="css/style.css"  -->
-
-
 </head>
 <body>
 
-    <!--header section start-->
     <header>
 
         <input type="checkbox" name="" id="toggler">
@@ -26,19 +20,26 @@
         <a href="#" class="logo">BakeWise<span>.</span></a>
 
         <nav class="navbar">
-            <a href="#home">home</a>
-            <a href="#about">about</a>
-            <a href="#products">products</a>
-            <a href="#contact">contact</a>
-            <a href="index.php">Login</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="products">Products</a>
+            <a href="#contact">Contact</a>
 
         </nav>
-
+        <div class="search-icon">
+            <a href="#" class="fas fa-search" id="search-btn"></a>
+        </div>
+        <div class="search-bar" id="search-bar">
+            <input type="text" placeholder="Search products..." id="search-input" />
+            <button id="search-submit">Search</button>
+        </div>
         <div class="icons">
             <a href="#" class="fas fa-heart"></a>
             <a href="#" class="fas fa-shopping-cart"></a>
-            <a href="index.php" class="fas fa-user"></a>
+            <a href="adminlogin.php" class="fas fa-user"></a>
         </div>
+        
+        
 
     </header>
      <!--header section ends-->
@@ -53,14 +54,14 @@
             Every bite is made with love and the finest ingredients to brighten your day!</p>
         <a href="#" class="btn">shop now</a>
 </section>
-<!--home section ends-->
 
-<!--about section starts-->
+
+
 <section class="about" id="about">
     <h1 class="heading"><sapn> about </sapn> us </h1>
     <div class="row">
         <div class="video-container">
-            <video src="admin/images/dd.mp4" loop autoplay muted></video>
+            <video src="images/dd.mp4" loop autoplay muted></video>
             <h3>best bakery products</h3>
         </div>
         <div class="content">
@@ -68,7 +69,7 @@
             <p>Welcome to Bakewise, 
                 your one-stop destination for deliciously crafted pastries, breads, and cakes.
                  We bake with love, using the finest ingredients to bring a smile to every bite.</p>
-            <p>At Bakewise, baking isn’t just a craft—it’s a passion. 
+            <p> At Bakewise, baking isn’t just a craft—it’s a passion. 
                 Our journey began with a love for creating unforgettable flavors, and we’ve been serving joy with every bite ever since. 
                 From freshly baked bread to cakes for your special every occasions, we’re here to make your days sweeter.
                 Every day, we bake fresh, using only the finest ingredients to ensure every bite is a delight.</p>
@@ -76,9 +77,7 @@
         </div>
     </div>
 </section>
-<!--about section ends-->
 
-<!--icon section starts-->
 <section class="icons-container">
     <div class="icons">
         <img src="images/free.png" alt="">
@@ -100,30 +99,42 @@
         <img src="images/cash.png" alt="">
         <div class="info">
             <h3>cash on delivery</h3>
-            <span>on orders</span>
+            <span>on all orders</span>
+        </div>
+    </div>
+
+    
+    <div class="icons">
+        <img src="images/eco.png" alt="">
+        <div class="info">
+            <h3>eco friendly </h3>
+            <span> environment safe </span>
         </div>
     </div>
 </section>
-<!--icon section ends-->
 
-<!--product section ends-->
 <section class="products" id="products">
     <h1 class="heading">our<span> products</span></h1>
     <div class="box-container">
 
         <div class="box">
-           <!----<span class="discount">-5%</span> -->
+           <span class="discount">-8%</span> 
             <div class="image">
                 <img src="images/brownie.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="1" 
+                       data-name="Brownie" 
+                       data-price="150">add to cart</a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'Brownie')"></a>
+
                 </div>
             </div>
             <div class="content">
                 <h3>brownie</h3>
-                <div class="price">Rs.150 <!--<span> rs200</span>--></div>
+                <div class="price">Rs.230 <span> Rs.250</span></div>
             </div>
         </div>
 
@@ -133,8 +144,13 @@
                 <img src="images/lemon.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="2" 
+                       data-name="lemon cookie" 
+                       data-price="100">add to cart</a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'lemon cookie')"></a>
+
                 </div>
             </div>
             <div class="content">
@@ -144,18 +160,23 @@
         </div>
 
         <div class="box">
-            <!--<span class="discount">-10%</span>-->
+            <span class="discount">-10%</span>
             <div class="image">
                 <img src="images/banana.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="3" 
+                       data-name="banana bread" 
+                       data-price="120">add to cart</a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'banana bread')"></a>
+
                 </div>
             </div>
             <div class="content">
                 <h3>banana bread</h3>
-                <div class="price">Rs.120 <!--<span> $10.99</span>--></div>
+                <div class="price">Rs.180 <span>Rs.200</span></div>
             </div>
         </div>
 
@@ -165,8 +186,13 @@
                 <img src="images/pbread.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="4" 
+                       data-name="plain bread" 
+                       data-price="90">add to cart</a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'plain bread')"></a>
+
                 </div>
             </div>
             <div class="content">
@@ -176,34 +202,44 @@
         </div>
 
         <div class="box">
-            <!--<span class="discount">-10%</span>-->
+            <span class="discount">-5%</span>
             <div class="image">
                 <img src="images/cookie.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="5" 
+                       data-name="chocolate chip cookie" 
+                       data-price="90">add to cart</a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'chocolate chip cookie')"></a>
+
                 </div>
             </div>
             <div class="content">
                 <h3>chocolate chip cookie</h3>
-                <div class="price">Rs.90 <!--<span> $10.99</span> --></div>
+                <div class="price">Rs.114 <span> Rs.120 </span> </div>
             </div>
         </div>
 
         <div class="box">
-            <!--<span class="discount">-10%</span>-->
+            <span class="discount">-5%</span>
             <div class="image">
                 <img src="images/cinimon.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="6" 
+                       data-name="cinnemon roll" 
+                       data-price="110">add to cart</a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'cinnemon roll')"></a>
+
                 </div>
             </div>
             <div class="content">
                 <h3>cinnemon roll</h3>
-                <div class="price">Rs.110 <!--<span> $10.99</span> --></div>
+                <div class="price">Rs.114 <span>Rs.120 </span></div>
             </div>
         </div>
 
@@ -213,13 +249,18 @@
                 <img src="images/muffine.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="7" 
+                       data-name="vanilla muffine" 
+                       data-price="70">add to cart</a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'vanilla muffine')"></a>
+
                 </div>
             </div>
             <div class="content">
                 <h3>vanilla muffine</h3>
-                <div class="price">Rs.70 <!--<span> Rs.150</span> --></div>
+                <div class="price">Rs.100 <!--<span> Rs.150</span> --></div>
             </div>
         </div>
 
@@ -229,37 +270,47 @@
                 <img src="images/blue.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="8" 
+                       data-name="blueberry muffine" 
+                       data-price="80">add to cart</a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'blueberry muffine')"></a>
+
                 </div>
             </div>
             <div class="content">
                 <h3>blueberry muffine</h3>
-                <div class="price">Rs.80 <!--<span> $10.99</span> --></div>
+                <div class="price">Rs.110 <!--<span> $10.99</span> --></div>
             </div>
         </div>
 
         <div class="box">
            <!--<span class="discount">-10%</span>-->
             <div class="image">
-                <img src="images/bagals.jpg" alt="">
+                <img src="images/bagalss.jpg" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                    <a href="#" 
+                       class="cart-btn" 
+                       data-id="9" 
+                       data-name="bagals" 
+                       data-price="50">add to cart</a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'bagals')"></a>
+
                 </div>
             </div>
             <div class="content">
                 <h3>bagel</h3>
-                <div class="price">Rs.50 <!--<span> $10.99</span>--></div>
+                <div class="price">Rs.90 <!--<span> $10.99</span>--></div>
             </div>
         </div>
     </div>
+    
 </section>
-<!--product section ends-->
 
-<!--contact section starts-->
-<section class="contact" id="contant">
+
+<section class="contact" id="contact">
     <h1 class="heading"><span>contact</span> us</h1>
     <div class="row">
         <form action="">
@@ -272,48 +323,42 @@
 
         <div class="image">
             <img src="images/contact-img.svg" alt="">
-
         </div>
     </div>
 </section>
-<!--contact section ends-->
-    
-<!--footer  section starts-->
-<section class="footer">
+
+
+<footer class="footer">
     <div class="box-container">
         <div class="box">
-            <h3>quick links</h3>
-            <a href="#">home</a>
-            <a href="#">about</a>
-            <a href="#">products</a>
-            <a href="#">contact</a>
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Products</a>
+            <a href="#">Contact</a>
         </div>
-
         <div class="box">
-            <h3>extra links</h3>
-            <a href="#">my account</a>
-            <a href="#">my order</a>
-            <a href="#">my favorite</a>
+            <h3>Extra Links</h3>
+            <a href="#"> Account</a>
+            <a href="#">Orders</a>
+            <a href="#">Favorites</a>
         </div>
-
         <div class="box">
-            <h3>location</h3>
-            <a href="#">nepal</a>
+            <h3>Location</h3>
+            <a href="#">Nepal</a>
         </div>
-
         <div class="box">
-            <h3>contact info</h3>
+            <h3>Contact Info</h3>
             <a href="#">+977 9811111111</a>
-            <a href="#">example@gmail.com</a>
-            <a href="#">pokhara, nepal</a>
+            <a href="#">Bakewise@gmail.com</a>
+            <a href="#">Pokhara, Nepal</a>
         </div>
     </div>
-    <div class="creadit">created by<span>team shrek</span>| all rights reserved</div>
+
+    <div class="creadit">created by<span> team shrek</span>| all rights reserved.</div>
 </section>
-<!--footer  section ends-->
- 
-   
 
+    </script>
+    <script src="home.js"></script>
 </body>
-
-</html>
+ </html>

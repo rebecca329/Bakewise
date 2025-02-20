@@ -4,169 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Cart - BakeWise</title>
-    <style>/* General Reset */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        
-        /* Header Styling */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: pink;
-            padding: 15px 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        header .logo {
-            font-size: 1.8rem;
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        header .logo span {
-            color: #fff;
-        }
-        
-        header .btn {
-            padding: 8px 15px;
-            background-color: #fff;
-            color: pink;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        header .btn:hover {
-            background-color:palevioletred;
-            color: #fff;
-        }
-        
-        /* Cart Section */
-        .cart-section {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            text-align: center;
-        }
-        
-        .cart-section h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: palevioletred;
-        }
-        
-        #cart-container {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            background-color: #f5f5f5;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        
-        .cart-item .item-details h4 {
-            margin: 0;
-            font-size: 1.2rem;
-            color: #333;
-        }
-        
-        .cart-item .item-details p {
-            margin: 5px 0 0;
-            font-size: 1rem;
-            color: #555;
-        }
-        
-        .cart-item .item-controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .cart-item .item-controls input[type="number"] {
-            width: 50px;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            text-align: center;
-        }
-        
-        .cart-item .item-controls .remove-btn {
-            padding: 5px 10px;
-            background-color: plum;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .cart-item .item-controls .remove-btn:hover {
-            background-color: plum;
-        }
-        
-        /* Total Price */
-        #total-price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-top: 20px;
-            color: #333;
-        }
-        
-        /* Checkout Button */
-        #checkout-btn {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: pink;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        #checkout-btn:hover {
-            background-color:pink;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .cart-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        
-            .cart-item .item-controls {
-                flex-direction: row;
-                justify-content: space-between;
-                width: 100%;
-                margin-top: 10px;
-            }
-        }
-        </style>
     <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+       :root {
+    --pink: pink;
+    --dark-gray: #333;
+    --light-pink: #fff0f3;
+    --primary-pink: #d2aab0;
+    --hover-pink: #d699a2;
+    --background: #fdf0f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: 0.2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--dark-gray);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-pink);
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+header .btn {
+    padding: 10px 15px;
+    background-color: #fff;
+    color: var(--primary-pink);
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+header .btn:hover {
+    background-color: var(--hover-pink);
+    color: #fff;
+}
+
+.cart-section {
+    max-width: 900px;
+    margin: 100px auto 50px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cart-section h1 {
+    font-size: 2rem;
+    color: var(--primary-pink);
+}
+
+#cart-container {
+    margin-top: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: var(--light-pink);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-item .item-details {
+    text-align: left;
+}
+
+.cart-item .item-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-item input[type='number'] {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid var(--primary-pink);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.remove-btn {
+    padding: 5px 10px;
+    background-color: var(--hover-pink);
+    color: #fff;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    background-color: var(--primary-pink);
+}
+
+#total-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark-gray);
+    margin-top: 20px;
+}
+
+#checkout-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: var(--primary-pink);
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    display: none;
+}
+
+#checkout-btn:hover {
+    background-color: var(--hover-pink);
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    header .logo {
+        font-size: 1.5rem;
+    }
+
+    .cart-section {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cart-item .item-controls {
+        margin-top: 10px;
+    }
+}
+
+    </style>
 </head>
 <body>
     <header>
@@ -176,18 +194,14 @@
 
     <section class="cart-section">
         <h1>Your Cart</h1>
-        <div id="cart-container">
-            <!-- Cart items will be dynamically added here -->
-        </div>
+        <div id="cart-container"></div>
         <h3 id="total-price"></h3>
-        <button id="checkout-btn" class="btn" style="display: none;">Checkout</button>
+        <button id="checkout-btn">Checkout</button>
     </section>
 
     <script>
-        // Fetch cart data from localStorage
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        // Render cart items
         function renderCart() {
             const cartContainer = document.getElementById("cart-container");
             const totalPriceEl = document.getElementById("total-price");
@@ -216,12 +230,10 @@
                 cartContainer.appendChild(cartItem);
             });
 
-            // Update total price
             const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
             totalPriceEl.textContent = `Total: Rs.${totalPrice}`;
             document.getElementById("checkout-btn").style.display = "block";
 
-            // Add event listeners for quantity change and removal
             document.querySelectorAll(".remove-btn").forEach(button => {
                 button.addEventListener("click", e => {
                     const index = e.target.dataset.index;
@@ -240,19 +252,15 @@
             });
         }
 
-        // Update cart in localStorage and re-render
         function updateCart() {
             localStorage.setItem("cart", JSON.stringify(cart));
             renderCart();
         }
 
-        // Render cart on page load
         renderCart();
 
-        // Handle checkout button click
         document.getElementById("checkout-btn").addEventListener("click", () => {
             alert("Proceeding to checkout...");
-            // Add checkout logic here
         });
     </script>
 </body>

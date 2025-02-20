@@ -128,7 +128,8 @@
                        data-id="1" 
                        data-name="Brownie" 
                        data-price="150">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'Brownie')"></a>
+
                 </div>
             </div>
             <div class="content">
@@ -148,7 +149,8 @@
                        data-id="2" 
                        data-name="lemon cookie" 
                        data-price="100">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'lemon cookie')"></a>
+
                 </div>
             </div>
             <div class="content">
@@ -168,7 +170,8 @@
                        data-id="3" 
                        data-name="banana bread" 
                        data-price="120">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'banana bread')"></a>
+
                 </div>
             </div>
             <div class="content">
@@ -188,7 +191,8 @@
                        data-id="4" 
                        data-name="plain bread" 
                        data-price="90">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'plain bread')"></a>
+
                 </div>
             </div>
             <div class="content">
@@ -208,7 +212,8 @@
                        data-id="5" 
                        data-name="chocolate chip cookie" 
                        data-price="90">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'chocolate chip cookie')"></a>
+
                 </div>
             </div>
             <div class="content">
@@ -228,7 +233,8 @@
                        data-id="6" 
                        data-name="cinnemon roll" 
                        data-price="110">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'cinnemon roll')"></a>
+
                 </div>
             </div>
             <div class="content">
@@ -248,7 +254,8 @@
                        data-id="7" 
                        data-name="vanilla muffine" 
                        data-price="70">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'vanilla muffine')"></a>
+
                 </div>
             </div>
             <div class="content">
@@ -268,7 +275,8 @@
                        data-id="8" 
                        data-name="blueberry muffine" 
                        data-price="80">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'blueberry muffine')"></a>
+
                 </div>
             </div>
             <div class="content">
@@ -288,7 +296,8 @@
                        data-id="9" 
                        data-name="bagals" 
                        data-price="50">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+                       <a href="#" class="fas fa-share" onclick="shareProduct(event, 'bagals')"></a>
+
                 </div>
             </div>
             <div class="content">
@@ -296,12 +305,8 @@
                 <div class="price">Rs.90 <!--<span> $10.99</span>--></div>
             </div>
         </div>
-
-
-
-
-    
     </div>
+    
 </section>
 
 
@@ -330,7 +335,7 @@
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Products</a>
-            <a href="#">Contact</a>
+            <a href="#submitform.php">Contact</a>
         </div>
         <div class="box">
             <h3>Extra Links</h3>
@@ -557,9 +562,20 @@
 
 
 
- 
+ <script>
 
-
+function shareProduct(event, productName) {
+    event.preventDefault();
+    if (navigator.share) {
+        navigator.share({
+            title: productName,
+            url: window.location.href
+        }).catch(err => console.log("Error sharing:", err));
+    } else {
+        alert("Sharing not supported on this browser.");
+    }
+}
+</script>
 
 
 <script>
