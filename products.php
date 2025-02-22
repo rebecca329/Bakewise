@@ -1,4 +1,5 @@
 <?php
+
 session_start(); 
 include 'pdatabase.php'; 
 
@@ -27,7 +28,7 @@ if (!isset($_SESSION['wishlist'])) {
         </nav>
         <div class="icons">
             <a href="wishlist.php" class="fas fa-heart"></a>
-            <a href="cart.html" class="fas fa-shopping-cart"></a>
+            <a href="cart.php" class="fas fa-shopping-cart"></a>
             <a href="index.php" class="fas fa-user"></a>
         </div>
     </header>
@@ -40,18 +41,18 @@ if (!isset($_SESSION['wishlist'])) {
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
+                // Update the image path to a relative path
+                $imagePath = "images/" . $row['image']; // Assuming the images are in the 'images' folder
                
                 echo '
                 <div class="box">
                     <div class="image">
                         <a href="productsdeet.php?id=' . $row['id'] . '">
-                            <img src="images/' . $row['image'] . '" alt="' . $row['name'] . '">
+                            <img src="' . $imagePath . '" alt="' . $row['name'] . '">
                         </a>
                         <div class="icons">
-                            <!-- Wishlist icon with conditional active class -->
                             <a href="javascript:void(0);" class="fas fa-heart ' . (in_array($row['id'], $_SESSION['wishlist']) ? 'active' : '') . '" data-id="' . $row['id'] . '" onclick="toggleWishlist(' . $row['id'] . ')"></a>
-                            
-                            <a href="#" class="cart-btn" data-id="' . $row['id'] . '" data-name="' . $row['name'] . '" data-price="' . $row['price'] . '">Add to Cart</a>
+                            <a href="" class="cart-btn" data-id="' . $row['id'] . '" data-name="' . $row['name'] . '" data-price="' . $row['price'] . '">Add to Cart</a>
                             <a href="productsdeet.php?id=' . $row['id'] . '" class="fas fa-info-circle"></a>
                         </div>
                     </div>

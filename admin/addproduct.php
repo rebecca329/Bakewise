@@ -29,14 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            
             if (move_uploaded_file($imageTmpName, $targetFile)) {
                 
-                $conn = new mysqli('localhost', 'root', '', 'admin');
+                $conn = new mysqli('localhost', 'root', '', 'bakewise');
 
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
 
                
-                $stmt = $conn->prepare("INSERT INTO productsss (name, price, original_price, discount_percentage, image_path, category_id) VALUES (?, ?, ?, ?, ?, ?)");
+                $stmt = $conn->prepare("INSERT INTO products (name, price, original_price, discount_percentage, image_path, category_id) VALUES (?, ?, ?, ?, ?, ?)");
                 $stmt->bind_param("sddisi", $name, $price, $original_price, $discount_percentage, $targetFile, $category_id);
 
 

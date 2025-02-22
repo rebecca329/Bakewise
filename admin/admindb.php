@@ -3,7 +3,7 @@
 $servername = "localhost";  
 $username = "root";         
 $password = "";            
-$dbname = "admin"; 
+$dbname = "bakewise"; 
 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -23,5 +23,5 @@ try {
 
 
 $categories = $pdo->query("SELECT * FROM categories")->fetchAll(PDO::FETCH_ASSOC);
-$products = $pdo->query("SELECT * FROM productsss")->fetchAll(PDO::FETCH_ASSOC);
+$products = $pdo->query("SELECT * FROM products")->fetchAll(PDO::FETCH_ASSOC);
 ?>

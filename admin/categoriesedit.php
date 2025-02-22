@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli('localhost', 'root', '', 'admin');
+$conn = new mysqli('localhost', 'root', '', 'bakewise');
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];

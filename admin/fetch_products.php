@@ -121,12 +121,12 @@
     <div class="product-container">
         <?php
        
-        $conn = new mysqli('localhost', 'root', '', 'admin');
+        $conn = new mysqli('localhost', 'root', '', 'bakewise');
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "SELECT * FROM productsss";
+        $sql = "SELECT * FROM products";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {

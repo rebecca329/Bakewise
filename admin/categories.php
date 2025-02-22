@@ -198,7 +198,7 @@
 <section class="categories-section" id="categories-section">
     <h2>Category Management</h2>
     
-    <form action="add-category.php" method="POST" class="category-form">
+    <form action="addcategory.php" method="POST" class="category-form">
         <label for="category_name">Category Name</label>
         <input type="text" id="category_name" name="category_name" required placeholder="Enter category name">
         

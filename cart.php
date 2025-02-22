@@ -262,6 +262,36 @@ header .btn:hover {
         document.getElementById("checkout-btn").addEventListener("click", () => {
             alert("Proceeding to checkout...");
         });
+        document.getElementById("checkout-btn").addEventListener("click", () => {
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    fetch("checkout.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ cart: cart })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("Order placed successfully!");
+            localStorage.removeItem("cart"); 
+            renderCart(); 
+            window.location.href = "index.html"; 
+        } else {
+            alert("Error: " + data.message);
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Something went wrong!");
+    });
+});
+
     </script>
 </body>
 </html>
